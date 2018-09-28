@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+</head>
+
+<body>
+{% extends "base.html" %}
+
+{% block title %}qaa_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/qaa_form.css" %}{% endblock %}
+
+{% block content %}
+<div id="content">
+	<div class="bbs-tit">
+    	<span class="braket">Q&amp;A</span>
+    	<p>무엇이든 물어보세요! 최대한 빠르게 답변드릴게요! :)</p>
+    </div>
+            
+    <div class="bbs-table-write">
+		<form name="form1" action="." method="post" enctype="multipart/form-data" style="position:relative;" autocomplete="off">{% csrf_token %}
+			<input type="hidden" name="attach1" value="">
+			<input type="hidden" name="type" value="i">
+			<input type="hidden" name="data" value="yes">
+			<input type="hidden" name="num1" value="">
+			<input type="hidden" name="num2" value="">
+			<input type="hidden" name="page" value="1">
+			<input type="hidden" name="ok" value="N">
+			<input type="hidden" name="board_cate" value="">
+			<input type="hidden" name="b_score[1]" value="">
+			<input type="hidden" name="b_score[2]" value="">
+			<input type="hidden" name="b_score[3]" value="">
+			<input type="hidden" name="b_score[4]" value="">
+			<input type="hidden" name="b_score[5]" value="">
+			<input type="hidden" name="branduid" value="">
+			<input type="hidden" name="BRO_CHK_KEY" value="">
+			<input type="hidden" name="lock" value="Y">                            
+                               
+            <fieldset>
+                <legend>일반게시판 쓰기</legend>
+                               
+				<table>
+                    <caption>게시판 글쓰기</caption>
+					<colgroup>
+                        <col width="95">
+                        <col width="190">
+                        <col width="90">
+                    	<col>
+					</colgroup>
+                                    
+					<tbody>
+                        <tr>
+                            <th>{{ form.author.label }}</th>
+                            <td>{{ form.author }}</td>
+                            
+                            <th>{{ form.password.label }}</th>
+                            <td>
+                            	{{ form.password }}    
+                            	<font color="red">자동 잠금 기능</font>                                                   
+                        	</td>
+                        </tr>
+                                     
+                        <tr>
+                            <th>{{ form.title.label }}</th>
+                            <td colspan="3">
+                               {{ form.title }}
+                        	</td>
+						</tr>
+                                       
+                        <tr>
+                        	<th>{{ form.content.label }}</th>
+                            <td colspan="3">
+								{{ form.content }} 
+                            	<input type="hidden" name="mobile_content_type" value="">
+                        	</td>
+                        </tr>
+                                       
+                        <tr>
+                            <th>{{ form.image.label }}</th>
+                            <td colspan="3">
+								{{ form.image }}
+							</td>
+                    	</tr>
+                	</tbody>
+            	</table>
+            </fieldset>
+			<input type="submit" value="저장" class="write" />	
+		</form> 
+		<a href="{% url 'question:QAA_list' %}"><button class="list">목록보기</button></a>	
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+</body>
+</html>

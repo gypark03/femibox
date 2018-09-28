@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="viewport" content="width=device-width">
+<title>{% block title %}Femibox{% endblock %}</title>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
+<script src="{% static "js/jscript.js" %}" defer="defer" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+</head>
+
+<body class="basecont">
+<div id="header">
+
+{% if user.is_active %}
+
+	<h4 class="top">
+		<a href="{% url 'logout' %}">Logout</a> /
+		<a href="#">Mypage</a> /
+		<a href="#">Cart</a>
+	</h4>
+	
+{% else %}
+
+	<h4 class="top">
+		<a href="{% url 'login' %}">Login</a> /
+		<a href="{% url 'register' %}">Join</a> /
+		<a href="{% url 'login' %}">Mypage</a> /
+		<a href="{% url 'login' %}">Cart</a>
+	</h4>
+	
+{% endif %}
+
+</div>
+
+<header class="all">
+	<div id="menu">
+		<a href="{% url 'home' %}"><img src="{% static 'img/logo1.png' %}" alt="no"></a>
+	</div>
+
+	<nav class="mainnav">
+		<ul class="nav" style="padding-left: 0px;">
+			<li><a href="{% url 'about' %}">ABOUT</a></li>
+			<li><a href="#">TEST</a></li>
+			<li><a href="{% url 'product:box_list' %}">PRODUCT</a>
+				<ul class="submenu" style="padding-left: 0px;">
+					<li><a href="{% url 'product:box_list' %}">Box</a></li>
+					<li><a href="{% url 'product:goods_list' %}">Goods</a></li>
+				</ul>
+			</li>
+			<li><a href="{% url 'campaign:campaign_list' %}">WITH US</a></li>
+			<li><a href="{% url 'femiLetter:letter_list' %}">FEMI-LETTER</a></li>
+			<li style="color: #9591ce;">QUESTION
+				<ul class="submenu" style="padding-left: 0px;">
+					<li><a href="{% url 'question:QAA_list' %}">Q&amp;A</a></li>
+					<li><a href="{% url 'question:FAQ_list' %}">FAQ</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</header>	
+<div id="top-line"></div>
+{% block content %}{% endblock %}	
+
+<footer>
+	<div id="footer-top">
+		<div id="footer-top-1">
+			<p class="phone"><i class="em em-telephone_receiver"></i> 2019-0200</p>
+			<p class="head-text1">제휴문의 : wndus4569@gmail.com</p>
+		</div>
+
+		<div id="footer-top-2">
+			<div class="headline1">CUSTOMER CENTER</div>
+				<p class="head-text">
+					월 - 14:30 ~ 17:30<br>
+					화 ~ 금 - 10:30 ~ 17:30<br>
+					점심시간 - 12:00 ~ 13:30<br>
+					토, 일, 공휴일 휴무
+				</p>
+		</div>
+
+		<div id="footer-top-3">
+			<div class="headline1">BANK INFO</div>
+				<p class="head-text">
+					기업 027-136516-01-023<br>
+					우리 1005-702-591681<br>
+					신한 140-009-837660<br>
+					하나 353-910025-48504<br>
+					농협 301-0222-1738-81<br>
+					국민 018301-04-160344<br>
+					예금주 : 페미박스
+				</p>
+		</div>
+
+		<div id="footer-top-4">
+			<div class="headline1">EXCHANGE</div>
+				<p class="head-text">
+					08050 <br>
+					서울특별시 남부순환로 73길 10-1<br>
+					페미박스<br>
+				</p>					
+		</div>
+	</div>
+		
+	<div id="footer-bottom">
+		회사소개|공지사항|채용정보|입점제휴문의|이용약관|개인정보취급방침<br><br>
+		COMPANY 주식회사 페미박스 CEO 팅커벨<br>
+		WEB MASTER 시바루 (h__g@naver.com) BUSINESS LICENSE 209-81-57263<br>
+		MAIL-ORDER LICENSE 제 2015-서울성동-0996GH [사업자정보확인]<br>
+		COPYRIGHT &copy; 주식회사 페미박스 ALL RIGHT RESERVED.
+	</div>
+</footer>
+</body>
+</html>

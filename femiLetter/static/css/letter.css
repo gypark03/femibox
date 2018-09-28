@@ -1,0 +1,50 @@
+*{list-style: none;}
+div{display: block;}
+a{text-decoration: none; color: inherit;}
+
+/*레터*/
+.wapper{padding-top: 5%;}
+.letter_title{margin-bottom: 5%; text-align: center; color: #9591ce;}
+
+/*레터 카테고리*/
+#letter-head{margin: 15px auto;}
+.letter-tit{display:inline-block; color: #989898; font-size: 16px;}
+.letter-sel{height: 28px; padding: 0 10px; width: 120px; line-height: 1em; border: solid 1px #d0d0d0; display: inline-block; font-size: 14px; color: #515151;}
+
+/*레터정렬되는 부분*/
+.container{min-height: 1200px; padding-left: 15px;}
+.gutter-12.row{margin-right: -12px; margin-left: -12px;}
+
+.col-xs-3{position: relative; width: 28%; float: left; min-height: 240px;}
+.magagin-cont{border: 1px solid #dcdcdc;}
+.thum{width: 100%; height: 268px; vertical-align: middle; border: 0; overflow: hidden;}
+.caption{height: 100px; overflow: hidden;}
+
+.text01 a{color: black; margin-left: 11px;}
+.text02{color: #666; font-size: 14px; margin-left: 11px;}
+.text03{font-size: 14px; color: #777777; margin-bottom: 10px; margin-left: 11px;}
+
+/*글쓰기버튼*/
+.letter_write{width:90px; height: 28px; float: right; margin-right: 5%; background-color: #eee; color: #666; font-size: 14px; font-weight: 600; border: 0;}
+
+/*pagination*/
+.pagination{margin-top: 80px; text-align: center;}
+.pagelist{display: inline-block; margin-left: auto; margin-right: auto;}
+.pagination ul li{width: 34px; height: 34px; border: 1px solid #dddddd; float: left; margin-left: -1px;}
+
+@media(min-width: 768px){
+	.wapper{padding-top: 59px;}
+	.letter_title{margin-bottom: 70px;}
+	
+	#letter-head{margin-right: auto; margin-left: auto;}
+	.letter-tit{font-size: 14px;}
+	.letter_write{right: 20px; margin-right: 0;}
+	
+	.container{min-height: 800px; max-width: none !important; width: 1152px !important; min-width: 1152px !important; padding-right: 15px; margin-right: auto; margin-left: auto;}
+	.col-xs-3{width: 22.5%; min-height: none;}
+	.magagin-cont{padding: 0px; margin: 0;}
+	
+	.text01 a{margin-bottom: 5px!important; margin-top: 8px!important;}
+	.text02{margin-bottom: 5px!important; font-size: 12px;}
+	.text03{font-size: 12px; margin-bottom: 14px!important;}
+}

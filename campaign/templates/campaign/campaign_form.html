@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}campaign_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/campaign_form.css" %}{% endblock %}
+
+{% block content %}
+<form>
+	<table>
+		<tr>
+			<td>이름</td>
+			<td>
+				<input type="text" name="name">
+			</td>
+		</tr>
+		<tr>
+			<td>핸드폰 번호</td>
+			<td>
+				<input type="text" name="name">
+			</td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td>
+				<input type="email" name="email">
+			</td>
+		</tr>
+	</table>
+</form>
+{% endblock %}
+
+{% block footer %}{% endblock %}

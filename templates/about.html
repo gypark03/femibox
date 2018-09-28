@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}about.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/about.css" %}{% endblock %}
+
+{% block content %}
+<div id="cnt_about">
+	<h2>ABOUT</h2>
+	<div id="about_img">
+	<img src="{% static 'img/about.jpg' %}"/>
+	</div>
+	<h3 class="title">더 나은 미래를 위한 상자를 판매하는 Femi Box 입니다.</h3>
+	<div id="cnt_box">
+		<p class="cnt_box_text">
+		페미박스는 우리 사회의 차별과 억압 그리고 혐오에 대해 담고 있습니다.<br/>
+		여성들이 차별받지 않는 공정한 사회는 언제쯤 올까요?<br/>
+		지금, 나 자신이 바뀌지 않으면 우리는 바뀔 수 없습니다.<br/>
+		우리가 꿈꾸는 <strong>"여성과 남성이 평등해지는 사회"</strong>가 올 때<br/>
+		그때까지 우리는 목소리를 내어 외치고 싸워야합니다.<br/>
+		저희 페미박스는 이러한 여성혐오를 알리고 여성인권향상에 대해 노력하고자 합니다.<br/>
+		<br/>
+		<strong>* 영업이익의 30%는 여성인권센터에 기부됩니다.</strong>
+		</p>
+	</div>
+	<div id="cnt_box_bottom">
+		<div id="bottom_img">
+			<img src="{% static 'img/mysteryBox_line.jpg' %}">
+		</div>
+		<div id="cnt_box_bottom1">
+			<h3>
+			본인의 페미 레벨에 맞추어 랜덤으로<br/> 매달 받아볼 수 있는 패키지 형식입니다.
+			</h3>
+			<p id="ctn_bottom">
+			매달 트렌트, 신간도서 등에 맞추어 제품이 업데이트 되고,<br/>
+			도서, 각종 페미 관련 물품 등으로 상자가 구성됩니다. <br/>
+			상자를 받아볼 수 있는 정기권으로 이용할 수 있고,<br/>
+			1회 이용권으로 체험해보실 수 있습니다.
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

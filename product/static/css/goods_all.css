@@ -1,0 +1,27 @@
+.gtitle{width: 80%; margin-left: auto; margin-right: auto; margin-bottom: 30px; border: 1px solid hotpink;}
+
+/*sub nav*/
+.goodsnav{width: 80%; margin-left: auto; margin-right: auto; margin-bottom: 30px; border: 1px solid blue;}
+.goodsnav a:link,.goodsnav a:visited {color: #7e7d79; text-decoration: none;}
+.goodsnav li:hover ul{display: block;}
+.goodsnav li ul{display: none; position: absolute; list-style: none; background: white; overflow: hidden; z-index: 1;}
+
+.goodssub{width: 80%; height: 30px; text-decoration: none; list-style: none; margin-right: auto; margin-left: auto;}
+.goodssub>li{float: left; width: 200px; text-align: center; position: relative; transition: all 0.4s; padding: 5px 0}
+.goodssub>li:after{clear: both;}
+.goodssub>li:hover{background-color: #F5F2EC; font-weight: bold;}
+
+/*goods content*/
+.gcontent{width: 80%; margin-left: auto; margin-right: auto; border: 1px solid red;}
+
+.glist{height: 50px; border:1px solid darkgreen;}
+.gdlist{width: 100px; height: 30px; float: right; margin-top: 10px;}
+
+.gall{min-height: 700px; border:1px solid darkgray;}
+
+/*pagination*/
+.box5{width:80%; margin-left: auto; margin-right: auto; border:1px solid orange;}
+
+.pagination{margin-top: 30px; text-align: center;}
+.pagelist{display: inline-block; margin-left: auto; margin-right: auto; list-style: none;}
+.pagination ul li{width: 34px; height: 34px; border: 1px solid #dddddd; float: left; margin-left: -1px;}

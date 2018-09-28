@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+a{text-decoration: none; color: inherit; list-style: none;}
+
+.container{margin: 0 auto;}
+
+/*제목 부분*/
+.cam_header{margin-top: 60px; padding-bottom: 10px;}
+.top_title{text-align: center; font-size: 30px;}
+
+/*내용 부분*/
+.wrapper{width: 100%; padding: 65px 0px;}
+.wrapper>img{width:60%; margin-left: 20%;}
+
+.content{width: 90%; margin-left: auto; margin-right: auto;} 
+.btn{margin-top: 100px; text-align: center;}
+.btn button{width: 180px; height: 50px; text-align: center; color: #f5f2ec; border: none; }
+
+.list-btn{width:100px; height: 38px; float: right; margin-right: 5%; background-color: #e0e0e0; color: #000; font-size: 14px; font-weight: 600; border: 0;}
+
+@media(min-width: 768px){
+	.container{width: 1200px; margin: 0 auto;}
+	.content{width:100%;}
+	.list-btn{margin-right: 0;}
+}

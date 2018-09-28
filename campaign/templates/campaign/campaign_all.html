@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}campaign_all.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/campaign_all.css" %}{% endblock %}
+
+{% block content %}
+<div class="wapper">
+	<div class="wu_title">
+		<h1>WITH US</h1>
+	</div>
+	<div class="container">
+		<div id="cam_header">
+			<p class="cam_title">With Us : </p>
+			<select class="cam_select">
+				<option value="">전체</option>
+				<option value="">시위참여</option>
+				<option value="">서명운동</option>
+				<option value="">모금운동</option>
+			</select>
+		</div>
+
+		{% for campaign in campaign %}
+		<div class="container_content">
+			<div class="row gutter-12">
+				<div class="col-xs-3" style="padding: 0 12px; margin-bottom: 20px;">
+					<div class="magagin-cont">
+						<a href="{{ campaign.get_absolute_url }}">
+							<img class="thum" src="{{ campaign.image.thumb_url }}">
+						</a>
+						
+						<div class="caption">
+							<span class="cag">&#91; {{ campaign.category }} &#93;</span><br>
+							<p class="text01">
+								<a href="{{ campaign.get_absolute_url }}">{{ campaign.title }}</a>
+							</p>
+							<p class="text02">{{ campaign.create_date|date:"N d, Y" }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<!-- Pagination -->
+	<nav class="pagination" aria-label="Page navigation">
+		<ul class="pagelist">
+	    	{% if page_obj.has_previous %}
+	        <li>
+		        <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+			    	<span aria-hidden="true">&laquo;</span>
+			    </a>
+			</li>
+		    {% else %}
+		    <li><span>&laquo;</span></li>
+		    {% endif %}
+
+		    {% for i in page_range %}
+		        {% if page_obj.number == i %}
+		            <li><span>{{ i }}</span></li>
+		        {% else %}
+		            <li><a href="?page={{ i }}">{{ i }}</a></li>
+		        {% endif %}
+		    {% endfor %}
+
+		    {% if page_obj.has_next %}
+		    <li>
+		        <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+		           <span aria-hidden="true">&raquo;</span>
+		        </a>
+		    </li>
+		    {% else %}
+		        <li><span>&raquo;</span></li>
+		    {% endif %}
+		</ul>
+	</nav>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}goods_all.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/goods_all.css" %}{% endblock %}
+
+{% block content %}
+<div class="gtitle">
+	<h2>Best Product</h2>
+	<hr>
+</div>
+
+<nav class="goodsnav">
+	<ul class="goodssub">
+		<li><a href="#">의류</a></li>
+		<li><a href="#">가방</a></li>
+		<li><a href="#">악세사리</a></li>
+		<li><a href="#">폰케이스</a></li>
+		<li><a href="#">문구</a></li>
+		<li><a href="#">책</a></li>
+	</ul>
+</nav>
+
+<div class="gcontent">
+	<div class="glist">
+		<select class="gdlist">
+			<option value="인기순">인기순</option>
+			<option value="최근등록순">최근등록순</option>
+			<option value="판매인기순">판매인기순</option>
+			<option value="낮은가격순">낮은가격순</option>
+			<option value="높은가격순">높은가격순</option>
+		</select>
+	</div>
+	
+	<div class="gall">
+	</div>
+</div>
+
+<div class="box5">
+	<!-- Pagination -->
+	<nav class="pagination" aria-label="Page navigation">
+		<ul class="pagelist">
+	    	{% if page_obj.has_previous %}
+	        <li>
+		        <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+			    	<span aria-hidden="true">&laquo;</span>
+			    </a>
+			</li>
+		    {% else %}
+		    <li><span>&laquo;</span></li>
+		    {% endif %}
+
+		    {% for i in page_range %}
+		        {% if page_obj.number == i %}
+		            <li><span>{{ i }}</span></li>
+		        {% else %}
+		            <li><a href="?page={{ i }}">{{ i }}</a></li>
+		        {% endif %}
+		    {% endfor %}
+
+		    {% if page_obj.has_next %}
+		    <li>
+		        <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+		           <span aria-hidden="true">&raquo;</span>
+		        </a>
+		    </li>
+		    {% else %}
+		        <li><span>&raquo;</span></li>
+		    {% endif %}
+		</ul>
+	</nav>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

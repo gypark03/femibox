@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}letter_detail.html{% endblock %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/letter_detail.css" %}{% endblock %}
+
+{% block content %}
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b916d4a01218f25"></script>
+<div class="container">
+	<div class="title">
+        <div class="ma-cell-layout">
+            <div class="ma-cell ma-cell-left">
+                <span class="ma-text">{{ object.title }}</span>
+            </div>
+            <div class="ma-cell ma-cell-right">
+                <span class="ma-date">{{ object.create_date|date:"Y-m-d"}}</span>
+            </div>
+        </div>
+    </div>
+	
+	<div class="wrapper">
+		<img src="{{ object.image.url }}">
+		
+		<hr style="margin-top: 80px; margin-bottom: 40px;">
+		
+		<p>By {{ object.author }} </p>
+		<p>{{ object.create_date|date:"Y.m.d"}} </p>
+		
+		<hr style="margin-top: 40px; margin-bottom: 80px;">
+
+		<div class="content">
+			{{ object.content|linebreaks }}
+		</div>
+	</div>
+	
+		<hr style="margin-top: 40px; margin-bottom: 80px;">
+		
+	<div class="ma-media-articlebutton">
+            <a class="ma-like-button" href="#" data-blogact="like" data-uid="1125">
+                <span class="ma-icon ma-icon-likeheart" data-role="like-heart"></span>
+                <span class="ma-label" >좋아요</span>
+                <span class="ma-value">( <span data-role="blog-likeTotal-1125"></span> )</span>
+            </a>
+
+		<a class="ma-share-button" href="#" data-blogact="share" data-toggle="sp-layer-btn" data-target=".dm-balloon-c" data-option="bro" style="position:relative;">
+            <div class="addthis_inline_share_toolbox_84de" style="margin-top: 30px"></div>
+         </a>
+
+	</div>
+	<div class="btn-wrapper">
+        <a href="{% url 'femiLetter:letter_list' %}"><button class="list-btn">목록</button></a>
+    </div>
+
+</div>
+{% endblock %}
+
+
+{% block footer %}{% endblock %}

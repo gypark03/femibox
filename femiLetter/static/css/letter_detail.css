@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.title {
+	margin-top: 60px;
+	padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.ma-cell-layout {
+    width: 100%;
+    display: table;
+}
+
+.ma-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container .title .ma-cell-right {
+    width: 95px;
+    text-align: right;
+}
+
+.ma-cell-layout {
+    width: 100%;
+    display: table;
+}
+
+.wrapper{
+	padding: 65px 0px;
+}
+.wrapper img{width:1200px;}
+
+.content{
+	width:1200px; 
+}
+
+.list-btn{width:100px; height: 38px; float: right; background-color: #e0e0e0; color: #000; font-size: 14px; font-weight: 600; border: 0;}
+
+/*좋아요버튼*/
+.ma-media-articlebutton {
+    margin: 70px 0 70px;
+    text-align: center;
+}
+.ma-like-button {
+    width: 165px;
+    height: 48px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
+}
+.ma-media-articlebutton span {
+    font-family: 'Noto Sans', 'Sans-serif' !important;
+}
+.ma-icon-likeheart {
+    width: 25px;
+    height: 22px;
+    background-image:url(../../../static/img/heart.jpg);
+}
+.ma-icon {
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+.ma-like-button .ma-label {
+    font-size: 14px;
+    vertical-align: middle;
+    margin-left: 2px;
+    display: inline-block;
+}
+.ma-media-articleview span {
+    font-family: 'Noto Sans', 'Sans-serif' !important;
+}

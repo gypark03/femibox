@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}qaa_all.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/qaa_all.css" %}{% endblock %}
+
+{% block content %}
+
+<div id="qa-table">
+	<h1 class="qa-title">Q&amp;A</h1>
+	
+	<div class="bbs-sch">
+		<form action="board.html" name="form1">
+		
+		<input type="hidden" name="q_id" value="">
+		<input type="hidden" name="code" value="femi">
+		<input type="hidden" name="page" value="1">
+		<input type="hidden" name="type" value="s">
+		<input type="hidden" name="board_cate" value="">
+		<input type="hidden" name="review_type" value="">
+                           
+        <!-- .검색 폼시작 -->
+        <fieldset>
+        	<legend>게시판 검색 폼</legend>
+                      
+            <select name="search_header" class="brd-hd" onChange="getSelectValue();">
+				<option value="선택">선택</option>
+				<option value="배송관련문의">배송관련문의</option>
+				<option value="상품문의">상품문의</option>
+				<option value="배송 후 교환반품">배송 후 교환반품</option>
+				<option value="입금확인">입금확인</option>
+				<option value="배송전 주문변경 및 취소">배송전 주문변경 및 취소</option>
+				<option value="기타">기타</option>
+			</select>                                
+            
+			<label>
+            	<input type="radio" name="qaname" value="ok" onclick="change(1);"  class="MS_input_checkbox">이름
+            </label>
+            <label>
+            	<input type="radio" name="qaname" value="ok" onclick="change(2);" checked="checked" class="MS_input_checkbox" >제목
+            </label>
+            <label>
+            	<input type="radio" name="qaname" value="ok" onclick="change(3);" class="MS_input_checkbox">내용
+            </label>
+            
+			<span class="key-wrap">
+            	<input type="text" name="stext" value=""  class="MS_input_txt">                                    
+            		<a href="#"><img src="{% static "img/btn_bbs_sch.gif" %}"></a>
+           </span>
+        </fieldset>
+    	</form><!-- .검색 폼 끝 -->
+    </div><!-- .bbs-sch -->
+    
+	<table class="table-top">
+		<thead>
+			<th class="number">번호</th>
+			<th class="category">분류</th>
+			<th class="title">제목</th>
+			<th class="name">이름</th>
+			<th class="top_date">작성일</th>
+		</thead>
+		
+		<ul class="table_main">
+		{% for qaa in qaa %}
+           
+		<tbody>
+			<td class="id">{{ qaa.id }}</td>
+			<td class="cag">&#91;{{ qaa.category }}&#93;</td>
+			<td class="tit"><a href="{{ qaa.get_absolute_url }}">{{ qaa.title }}</a></td>
+			<td class="aut">{{ qaa.author }}</td>
+			<td class="date">{{ qaa.create_date|date:"N d,Y" }}</td>
+		</tbody>
+		</ul>
+		
+		{% endfor %}
+		
+	</table>
+	
+	<div class="link-btn">
+		<a href="{% url 'question:add' %}">
+			<div class="board_btn01">글쓰기</div>
+		</a>
+	</div>
+	
+	<!-- Pagination -->
+	<nav class="pagination" aria-label="Page navigation">
+		<ul class="pagelist">
+	    	{% if page_obj.has_previous %}
+	        <li>
+		        <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+			    	<span aria-hidden="true">&laquo;</span>
+			    </a>
+			</li>
+		    {% else %}
+		    <li><span>&laquo;</span></li>
+		    {% endif %}
+
+		    {% for i in page_range %}
+		        {% if page_obj.number == i %}
+		            <li><span>{{ i }}</span></li>
+		        {% else %}
+		            <li><a href="?page={{ i }}">{{ i }}</a></li>
+		        {% endif %}
+		    {% endfor %}
+
+		    {% if page_obj.has_next %}
+		    <li>
+		        <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+		           <span aria-hidden="true">&raquo;</span>
+		        </a>
+		    </li>
+		    {% else %}
+		        <li><span>&raquo;</span></li>
+		    {% endif %}
+		</ul>
+	</nav>
+</div>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

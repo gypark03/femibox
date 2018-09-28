@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}login.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+<div style="width: 1152px; margin: auto;">
+		<div id="login_form_cont" style=" margin-top: 80px; left: 200px;">
+			<p class="login_text">Login</p>
+			<form action="." method="POST">{% csrf_token %}
+
+			{% if form.errors %}
+
+			<p class="errornote">아이디 혹은 비밀번호 오류입니다.</p>
+
+			{% endif %}
+
+			<div class="form-row">
+				<p class="login_text1">아이디</p>
+				<input class="login_form_cont1" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}" type="text">
+			</div>
+
+			<div class="form-row">
+				<p class="login_text2">비밀번호</p>
+				<input class="login_form_cont2" id="{{ form.password.id_for_label }}" name="{{ form.password.html_name }}" type="password">
+			</div>
+
+			<div class="submit-row">
+				<input type="submit" value="Login"/>
+				<input type="hidden" name="next" value="{{ next }}"/>
+			</div>
+
+			</form>
+		</div>
+
+		<div id="guest_form_cont" style=" margin-top: 80px; left: 200px;">
+			<p class="guest_text">Order Check</p>
+			<form action="." method="POST">{% csrf_token %}
+
+			{% if form.errors %}
+
+			<p class="errornote">이메일 혹은 주문번호를 다시 확인해 주세요.</p>
+
+			{% endif %}
+
+			<div class="form-row">
+				<p class="guest_text1">이메일</p>
+				<input class="guest_form_cont1" type="text" name="order-email">
+			</div>
+
+			<div class="form-row">
+				<p class="guest_text2">주문번호</p> 
+				<input name="order_seq" class="guest_form_cont2" type="text">
+			</div>
+
+			<button id="find" type="submit">Check</button>
+
+			<script type="text/javascript">document.getElementById('id_ID').focus();</script>
+
+			</form>
+		</div>
+		
+		<div class="login_footer" style="width: 852px;">
+			<div id="guest_login">
+			<p class="join_text">
+				<span>아직 회원이 아니신가요?</span>
+				<a href="{% url 'register' %}">회원가입</a>
+			</p>
+			<p class="find_text">
+				<span>아이디/패스워드를 잊어버리셨나요?</span>
+				<a href="#">아이디/패스워드 찾기</a>
+			</p>
+			</div>
+			<div class="login_footer1">
+				<h2>더 나은 미래를 위한 <br> Femi_Box</h2>
+			</div>
+		</div>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock footer %}

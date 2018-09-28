@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+*{list-style: none; font-family: "맑은 고딕";}
+#qa-table{position:relative;}
+table{border-collapse: collapse; width:1200px; margin-left: auto; margin-right: auto;}
+td,th{line-height: 18px; border-bottom: 1px solid #e0e0e0; vertical-align: top; padding: 5px 15px;}
+h1{color: #9591ce; text-align: center;}
+a{text-decoration: none; color: inherit;}
+
+.qa-title{margin:50px auto;}
+.table-top{margin:80px auto;}
+
+/*각각의 테이블*/
+.table-top th{border-top: 2px solid #9591ce; background-color: #f5f2ec;}
+
+.top_number{width:10%; vertical-align: middle; text-align: center; border-right: 1px solid #e0e0e0;}
+.title{width:90%; vertical-align: middle;}
+.title a{color: #000; font-size: 16px;}
+.cag{font-size: 14px; color: #888; letter-spacing: -1px;}
+
+/*검색*/
+.bbs-sch{
+    margin-right: 350px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+form {
+    display: block;
+    margin-top: 0em;
+    margin: 0;
+    padding: 0;
+}
+input{
+    font-size: 12px;
+    line-height: 1.25;
+    color: #777;
+    font-family: sans-serif;
+    vertical-align: middle;
+}
+fieldset{
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+legend {
+    display: none;
+}
+select {
+    line-height: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    font: 400 13.3333px Arial;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+.bbs-sch label {
+    margin-right: 10px;
+}
+
+label {
+    cursor: default;
+}
+.bbs-sch .key-wrap, .bbs-sch img {
+    vertical-align: middle;
+}
+.bbs-sch .key-wrap {
+    font-size: 0;
+    line-height: 0;
+}
+.input_txt {
+    margin-right: 5px;
+    padding: 2px 0 0 2px;
+    line-height: 17px;
+    border: 1px solid #dcdcdc;
+}
+.brd-hd{height:20px;}
+
+/*글쓰기버튼*/
+.link-btn{
+    width:80px;
+    float: right;
+    margin: 100px 0;
+    margin-right: 370px;
+}
+.board_btn01{
+    width: 100px; 
+    height: 30px; 
+    background-color: #e6e6e6; 
+    font-size: 16px; 
+    font-weight: 700; 
+    border: 0; 
+    text-decoration:none;
+    color: #000;
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+#contents{margin-bottom: 200px;}
+
+#qa-board-title{height: 100px; margin: 50px auto;}
+#qa-board-title h1{font-size: 30px; text-align: center; color: #9591ce;}
+#qa-board-title p{font-size: 14px; text-align: center; margin:20px auto; color: #6C787F;}
+
+table{border-collapse: collapse; width:1200px; margin-left: auto; margin-right: auto;}
+tr{height: 40px; border-bottom: 1px solid #e0e0e0;}
+th{width: 20%; font-weight: normal;}
+td,th {float: left; line-height: 18px; vertical-align: middle; font-family: "Lucida Grande", sans-serif;}
+
+.qa-contents{margin: 30px 0;}
+.qa-contents p{margin-left: 30px;}
+.pass_txt{font-size: 12px; color: red;}
+
+.req-button{width:1200px; margin-left: auto; margin-right: auto;}
+.list-btn{width: 100px; height: 38px; float: right; margin-top: 30px; background-color: #e0e0e0; color: #000; font-size: 14px; font-weight: 600; border: 0;}

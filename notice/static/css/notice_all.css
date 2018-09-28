@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+ul {list-style: none;}
+
+#qa-table{position:relative;}
+table {border-collapse: collapse; list-style: none; width:1200px; margin-left: auto; margin-right: auto;}
+td,th {line-height: 18px; border-bottom: 1px solid #eee; vertical-align: top; padding: 5px 15px; font-family: "Lucida Grande", sans-serif;}
+
+h1{color: #9591ce; text-align: center;}
+a{text-decoration: none;}
+
+.qa-title{margin:50px auto;}
+.table-top{margin:80px auto;}
+
+/*각각의 테이블*/
+.number{width:50px;}
+.title{width:320px;}
+
+
+/*검색*/
+.bbs-sch {
+    margin-right: 350px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+form {
+    display: block;
+    margin-top: 0em;
+    margin: 0;
+    padding: 0;
+}
+input{
+    font-size: 12px;
+    line-height: 1.25;
+    color: #777;
+    font-family: sans-serif;
+    vertical-align: middle;
+}
+fieldset{
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+legend {
+    display: none;
+}
+select {
+    line-height: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    font: 400 13.3333px Arial;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+.bbs-sch label {
+    margin-right: 10px;
+}
+
+label {
+    cursor: default;
+}
+.bbs-sch .key-wrap, .bbs-sch .keyword, .bbs-sch img {
+    vertical-align: middle;
+}
+.bbs-sch .key-wrap {
+    font-size: 0;
+    line-height: 0;
+}
+.MS_input_txt {
+    margin-right: 5px;
+    padding: 2px 0 0 2px;
+    line-height: 17px;
+    border: 1px solid #dcdcdc;
+}
+.brd-hd{height:20px;}
+
+/*글쓰기버튼*/
+.link-btn{
+    width:80px;
+    float: right;
+/*    margin: 100px 0;*/
+    margin-right: 370px;
+}
+.board_btn01{
+    width: 100px; 
+    height: 30px; 
+    background-color: #e6e6e6; 
+    font-size: 16px; 
+    font-weight: 700; 
+    border: 0; 
+    text-decoration:none;
+    color: #000;
+    text-align: center;
+}
+
+/*pagination*/
+.pagination{
+	margin-top: 80px;
+	text-align: center;
+}
+.pagelist{
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pagination ul li {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #dddddd;
+    float: left;
+    margin-left: -1px;
+}

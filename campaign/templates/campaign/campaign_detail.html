@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}campaign_detail.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/campaign_detail.css" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="cam_header">
+    	<div class="top_title">
+        	<span class="title">&#91; {{ object.title }} &#93;</span>
+        </div>
+    </div>
+	
+	<div class="wrapper">
+		<img src="{{ object.image.url }}">
+		
+		<hr style="margin-top: 80px; margin-bottom: 40px;">
+		
+		<p>Date: {{ object.create_date|date:"Y.m.d"}} </p>
+		
+		<hr style="margin-top: 40px; margin-bottom: 80px;">
+
+		<div class="content">
+			<div class="main_cont">
+				{{ object.content|linebreaks }}
+			</div>
+			
+			<div class="btn">
+				<button type="button" id="pt_button" style="color: #666;"><a onClick="winOpen();">참여하기</a></button>
+			</div>
+		</div>
+	</div>
+	
+		<hr style="margin-top: 40px; margin-bottom: 80px;">
+	<div class="btn-wrapper">
+        <a href="{% url 'campaign:campaign_list' %}"><button class="list-btn">목록</button></a>
+    </div>
+</div>
+
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block footer %}{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}faq_all.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/faq_all.css" %}{% endblock %}
+
+
+{% block content %}
+
+<div id="qa-table">
+	<h1 class="qa-title">FAQ</h1>
+	
+	<div class="bbs-sch">
+		<form action="board.html" name="form1">
+		
+		<input type="hidden" name="s_id" value="">
+		<input type="hidden" name="code" value="femi">
+		<input type="hidden" name="page" value="1">
+		<input type="hidden" name="type" value="s">
+		<input type="hidden" name="board_cate" value="">
+		<input type="hidden" name="review_type" value="">
+                           
+        <!-- .검색 폼시작 -->
+        <fieldset>
+        	<legend>게시판 검색 폼</legend>
+                      
+            <select name="search_header" class="brd-hd">
+				<option value="선택">선택</option>
+				<option value="배송관련문의">배송관련문의</option>
+				<option value="상품문의">상품문의</option>
+				<option value="배송 후 교환반품">배송 후 교환반품</option>
+				<option value="입금확인">입금확인</option>
+				<option value="배송전 주문변경 및 취소">배송전 주문변경 및 취소</option>
+				<option value="기타">기타</option>
+			</select>                                
+            
+			<label>
+            	<input type="radio" name="shname" value="ok" onclick="change(1);" class="input_checkbox">이름
+            </label>
+            <label>
+            	<input type="radio" name="shname" value="ok" onclick="change(2);" checked="checked" class="input_checkbox" >제목
+            </label>
+            <label>
+            	<input type="radio" name="shname" value="ok" onclick="change(3);" class="input_checkbox">내용
+            </label>
+            
+			<span class="key-wrap">
+            	<input type="text" name="stext" value=""  class="input_txt">                                    
+            		<a href="#"><img src="{% static "img/btn_bbs_sch.gif" %}"></a>
+           </span>
+        </fieldset>
+    	</form><!-- .검색 폼 끝 -->
+    </div><!-- .bbs-sch -->
+    
+	<table class="table-top">
+		<thead>
+			<th class="top_number">번호</th>
+			<th class="_title">제목</th>
+		</thead>
+		
+		<ul>
+		{% for faq in faq %}
+		<tbody>
+			<tr>
+				<td align="center" class="number">{{ faq.id }}</td>
+				<td align="left" class="title">
+					<span class="cag">&#91;{{ faq.category }}&#93;</span>
+					&nbsp;
+					<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)"> {{ faq.title }}</a><div style="DISPLAY: none">
+					<div id="demo133" class="collapse" style="width: 80%; margin: 10px;">
+						<p>{{ faq.content }}</p>
+					</div>
+					<a onclick="this.parentNode.style.display='none';" href="javascript:void(0)"></a></div>  
+				</td>
+			</tr>
+		</tbody>
+		</ul>
+		
+		{% endfor %}
+		
+	</table>
+	
+	
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

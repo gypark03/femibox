@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}letter.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/letter.css" %}{% endblock %}
+
+{% block content %}
+<div class="wapper">
+	<div class="letter_title">
+		<h1>FEMI LETTER</h1>
+	</div>
+	<div class="container">
+		<div id="letter-head">
+			<p class="letter-tit">페미레터 : </p>
+			<select class="letter-sel">
+				<option value="">전체</option>
+				<option value="사람">사람</option>
+				<option value="metoo">#Me Too</option>
+				<option value="토닥토닥">토닥토닥</option>
+			</select>
+			<a href="{% url 'femiLetter:add' %}"><button class="letter_write">글쓰기</button></a>
+		</div>
+
+		{% for femiLetter in femiLetter %}
+		<div class="container_content">
+			<div class="row gutter-12">
+				<div class="col-xs-3" style="padding: 0 12px; margin-bottom: 20px;">
+					<div class="magagin-cont">
+						<a href="{{ femiLetter.get_absolute_url }}">
+							<img class="thum" src="{{ femiLetter.image.thumb_url  }}">
+						</a>
+						
+						<div class="caption">
+							<p class="text01">
+								<a href="{{ femiLetter.get_absolute_url }}">{{ femiLetter.title }}</a>
+							</p>
+							<p class="text02"> By {{ femiLetter.author }}</p>
+							<p class="text03">{{ femiLetter.update_date|date:"N d, Y" }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<!-- Pagination -->
+	<nav class="pagination" aria-label="Page navigation">
+		<ul class="pagelist">
+	    	{% if page_obj.has_previous %}
+	        <li>
+		        <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+			    	<span aria-hidden="true">&laquo;</span>
+			    </a>
+			</li>
+		    {% else %}
+		    <li><span>&laquo;</span></li>
+		    {% endif %}
+
+		    {% for i in page_range %}
+		        {% if page_obj.number == i %}
+		            <li><span>{{ i }}</span></li>
+		        {% else %}
+		            <li><a href="?page={{ i }}">{{ i }}</a></li>
+		        {% endif %}
+		    {% endfor %}
+
+		    {% if page_obj.has_next %}
+		    <li>
+		        <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+		           <span aria-hidden="true">&raquo;</span>
+		        </a>
+		    </li>
+		    {% else %}
+		        <li><span>&raquo;</span></li>
+		    {% endif %}
+		</ul>
+	</nav>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

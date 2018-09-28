@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}faq_detail.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/faq_detail.css" %}{% endblock %}
+
+{% block content %}
+<div>
+	<div>
+		FAQ
+	</div>
+	
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<select>
+						<option value="선택">선택</option>
+						<option value="배송관련문의">배송관련문의</option>
+						<option value="상품문의">상품문의</option>
+						<option value="배송 후 교환반품">배송 후 교환반품</option>
+						<option value="입금확인">입금확인</option>
+						<option value="배송전 주문변경 및 취소">배송전 주문변경 및 취소</option>
+						<option value="기타">기타</option>
+					</select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table>
+		<colgroup>
+			<col width="40">
+			<col>
+		</colgroup>
+		
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>
+					<span></span>
+					<span>
+						<a href="#" onclick="document.getElementById('text').innerHTML = text()">{{ faq.title }}</a>
+					</span>
+					<div>
+						<p id="text">{{ object.content }}</p>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock %}

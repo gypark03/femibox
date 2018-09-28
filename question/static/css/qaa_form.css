@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+div {
+    display: block;
+}
+#content {
+    width: 1300px;
+    margin-top: 50px;
+    position: relative;
+    border: 0px solid #000;
+    margin: 0 auto;
+}
+
+/*큐엔에이 제목*/
+.bbs-tit {
+    width: 250px;
+    text-align: center;
+    height: 40px;
+    margin: 50px auto;
+}
+.braket {
+    font-weight: bold;
+	font-size: 30px;
+    color: #9591ce;
+    text-transform: uppercase;
+}
+
+.bbs-tit p{
+	width: 350px;
+	font-size: 14px; 
+	text-align: center; 
+	margin:20px auto; 
+	color: #6C787F;
+}
+
+/*큐엔에이 글 작성하는 테이블*/
+fieldset{
+	border: 0 none;
+	margin: 100px auto;
+}
+hr, caption, legend {display: none;}
+colgroup {display: table-column-group;}
+col {display: table-column;}
+
+table {
+    width: 1200px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th,td {
+    padding: 6px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    color: #000;
+    font-weight: normal;
+    font-size: 11px;
+}
+
+/*타이틀 카테고리*/
+select {
+    line-height: 18px;
+    height: 18px;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+/*테이블 input*/
+.input_txt {
+    margin-right: 5px;
+    padding: 2px 0 0 2px;
+    line-height: 17px;
+    border: 1px solid #dcdcdc;
+}
+
+/*content 작성칸*/
+td textarea {
+    width: 1000px;
+    height: 300px;
+}
+
+/*버튼*/
+.write,.list{
+	width: 90px; 
+	height: 36px;
+}
+.write{
+	background-color: #5e5e5e;
+	color: #fff;
+	font-size: 16px; 
+	font-weight: 700;
+	border: 0;
+	float: right;
+}
+.list{
+	background-color: #e6e6e6;
+	border: 1px solid #c9c9c9;
+	font-size: 16px; 
+	font-weight: 700; 
+	color: #999;
+	float: right;
+	margin-right: 20px;
+}

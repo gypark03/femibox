@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}box_all.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/box_all.css" %}{% endblock %}
+
+{% block content %}
+<script src="{% static "js/script.js" %}" type="text/javascript"></script>
+<script src="{% static "js/jquery-1.12.3.js" %}" type="text/javascript"></script>
+
+<div class="btitle">
+	<h2>9월 FemiBox</h2>
+	<p>"박스 제목 넣기"</p>
+</div>
+<div class="clear"></div>
+
+<div class="bcontent">
+	content
+</div>
+<div class="clear"></div>
+
+<div class="border">
+	<div class="bts">
+		<ul class="mbuy">
+			<li><a href="#">박스 구매하기</a>
+				<ul class="sbuy" style="padding-left: 0px;">
+					<li><a href="#">초급박스 구매하기</a></li>
+					<li><a href="#">중급박스 구매하기</a></li>
+					<li><a href="#">고급박스 구매하기</a></li>
+				</ul>
+			</li>
+			<li><a href="#">박스 더보기</a></li>
+		</ul>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

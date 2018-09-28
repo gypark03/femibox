@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}qaa_detail.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/qaa_detail.css" %}{% endblock %}
+
+{% block content %}
+<div id="qa-board-title">
+	<h1>Q&amp;A</h1>
+	<p>무엇이든 물어보세요! 최대한 빠르게 답변드릴게요! :)</p>
+</div>
+
+<div id="contents">
+	<table>
+		<tr>
+			<th>title</th>
+			<td colspan="3">{{ object.title }}</td>
+		</tr>
+		<tr>
+			<th>name</th>
+			<td>{{ qaa.author }}</td>
+		</tr>
+		<tr>
+			<th>date</th>
+			<td>{{ qaa.create_date|date:"N d,Y" }}</td>
+		</tr>
+		<tr>
+			<td class="qa-contents">{{ object.content|linebreaks }}</td>
+		</tr>
+		<tr>
+			<th>password</th>
+			<td>
+				<p class="pass_txt">
+					<input id="input_passwd" type="password" name="passwd" class="input_txt">
+					삭제하고 싶으시면 작성시 사용한 비밀번호를 입력하세요!
+				</p>
+			</td>
+		</tr>
+	</table>
+	
+	<div class="req-button">
+		<a href="{% url 'question:QAA_list' %}"><button class="list-btn">목록</button></a>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}register.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+
+<div id="join_cont">
+<h2>회원 정보 입력</h2>
+<hr style="width: 100%">
+	<form method="POST" action="."> {% csrf_token %}
+	{% if form.errors %}
+	<p class="errornote">빈칸없이 모든 작성란을 채워주세요.</p>
+	{% endif %}
+	
+		<table>
+			<tbody>
+				<tr>
+					<td class="table-label">아이디<span class="join_required"></span></td>
+					<td>
+						{{ form.user.username }}
+
+						<span class="condition">150자 이하 문자, 숫자 그리고 @/./+/-/_만 가능합니다.</span>
+						<span id="id_info" style="padding-top:5px; color:#d13b00;"></span>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="table-label"> 비밀번호<span class="join_required"></span></td>
+					<td>
+						{{ form.user.password1 }}
+						<span class="condition">공백 없는 영문, 숫자 포함 8-20자로 개인정보와 비슷한 비밀번호는 사용할 수 없습니다.</span>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="table-label"> 비밀번호확인<span class="join_required"></span></td>
+					<td>
+						{{ form.user.password2 }} 
+						<span class="condition">비밀번호 확인을 위해 한번 더 입력하세요</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="table-label">이름<span class="join_required"></span> </td>
+					<td>{{ form.user.first_name }}</td>
+				</tr>
+
+				<tr>
+					<td class="table-label">생년월일<span class="join_required"></span></td>
+					<td>
+						{{ form.profile.birth }} 
+						<span class="condition">{{ form.profile.birth.help_text }}</span>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="table-label">성별<span class="join_required"></span> </td>
+					<td>{{ form.profile.gender }}</td>
+				</tr>
+
+				<tr>
+					<td class="table-label">이메일<span class="join_required"></span></td>
+					<td>
+						{{ form.user.email }} 
+						<span class="condition">{{ form.user.email.help_text }}</span>
+						&nbsp;
+						<label><input type="checkbox" name="mailing" value="Y"> 메일 수신</label>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="table-label"></td>
+					<td>
+						<span class="condition">
+						이메일 수신에 동의하시면 여러가지 할인혜택과 각종 이벤트 정보를 받아보실 수 있습니다.<br>
+						 회원가입관련, 주문배송관련 등의 메일은 수신동의와 상관없이 모든 회원에게 발송됩니다.
+						</span>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="table-label">휴대폰번호<span class="join_required"></span></td>
+					<td>
+						{{ form.profile.phone }}
+						<span class="condition">{{ form.profile.phone.help_text }}</span>
+						&nbsp;
+						<label>
+							<input type="checkbox" name="sms" value="Y"> SMS를 수신하겠습니다.
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="table-label"></td>
+					<td>
+						<span class="condition">SMS 수신에 동의하시면 여러가지 할인혜택과 각종 이벤트 정보를 받아보실 수 있습니다.<br>
+						 회원가입관련, 주문배송관련 등의 SMS는 수신동의와 상관없이 구매 회원에게 발송됩니다.
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+		<hr>
+		
+		<tr>
+			<td align="center">
+				<div class="join-wrapper">
+	            	<input class="hello" type="submit" value="가입하기">
+		            <button type="button" onclick="history.back();">취소</button>
+		        </div>
+			</td>
+		</tr>
+	</form>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock footer %}
