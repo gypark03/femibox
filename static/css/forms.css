@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+body *{font-family:"맑은 고딕"; box-sizing: border-box;}
+* { border-radius: 0;}
+.errornote{width: 400px; display:block; margin: 5px 0; padding: 5px 25px; background-color: #e0e0e0; color: #c30; font-size: 12px; font-weight: bold;}
+
+/*회원 로그인*/
+#login_form_cont{position: relative; width: 426px; height: 232px; padding: 0; border-right: 1px solid #dcdcdc; margin-bottom: 35px; float: left;}
+.login_text{left: 71px; top: 6px; font-size: 25px; color: black;}
+.login_text1{left: 0px; top: 50px; font-size: 14px;}
+.login_form_cont1{left: 70px; top: 44px; width: 227px; height: 25px; font-size: 14px; color: #999999; border: 1px solid #dcdcdc; padding-left: 8px;}
+.login_text2{left: 0px; top: 97px; font-size: 14px; color: #373737;}
+.login_form_cont2{left: 70px; top: 93px; width: 227px; height: 25px; font-size: 14px; color: #999999; padding-left: 8px; border: 1px solid #dcdcdc;}
+.submit-row input{left: 255px; top: 120px; background-color: #e0e0e0; border-radius: 3px; width: 87px; height: 87px; font-size: 16px; cursor: pointer; margin: 0px; position: absolute; border: none; vertical-align: middle; }
+
+/*비회원 로그인*/
+#guest_form_cont {position: relative; width: 426px; height: 232px; padding: 0; margin-left: 35px; margin-bottom: 35px; float: left;}
+.guest_text{left: 71px; top: 6px; font-size: 25px; color: black;}
+.guest_text1{left: 0px; top: 50px; font-size: 14px;}
+.guest_form_cont1{left: 70px; top: 44px; width: 227px; height: 25px; font-size: 14px; color: #999999; border: 1px solid #dcdcdc; padding-left: 8px;}
+.guest_text2{left: 0px; top: 97px; font-size: 14px; color: #373737;}
+.guest_form_cont2{left: 70px; top: 93px; width: 227px; height: 25px; font-size: 14px; color: #999999; padding-left: 8px; border: 1px solid #dcdcdc;}
+#find{left: 255px; top: 120px; background-color: #e0e0e0; border-radius: 3px; width: 87px; height: 87px; font-size: 16px; margin: 0px; position: absolute; border: none; outline: 0 !important; overflow: visible;}
+
+.login_footer{position: relative; float: left; padding: 0; left: 200px; font-size: 13px;}
+#guest_login{width: 854px; height: 95px; margin: auto; clear: both;}
+.join_text, .find_text{padding-left: 13px; box-sizing: border-box; line-height: inherit;}
+.login_footer1{color:#9591CE; text-align: center; font-size:20px;}
+
+/* 회원가입 */
+.register-title{margin: 40px 0; text-align: center;}
+#register_cont, #join_cont{position: relative; float: left; width: 90%; margin: 0 100px; }
+
+#radio_button{position: relative; text-align: center; margin: 30px 0;}
+
+#join{width: 130px; height: 42px; background-color: #5e5e5e; font-size: 16px; font-weight: 700; border: 0; text-decoration:none;}
+a #join{color:#fff;}
+#cancel{width: 130px; height: 42px; font-size: 16px; font-weight: 700; background-color: #e6e6e6; border: 1px solid #c9c9c9; margin-right: 30px; text-decoration: none;}
+a #cancel{color: #999;}
+
+.req-button{padding-top: 50px; padding-left: 700px;}
+
+/*회원정보입력*/
+form {display: block;}
+
+table {border-collapse: collapse; border-spacing: 0; background-color: transparent;  width: 90%; padding-left: 700px;}
+tbody {display: table-row-group; vertical-align: middle; border-color: inherit;}
+tr {display: table-row;  vertical-align: inherit; border-color: inherit;}
+td, p {font-size: 14px;}
+td, th {display: table-cell; vertical-align: inherit; padding: 0; font-weight: normal;}
+table td {padding: 10px;}
+
+.table-label{width:175px; padding-left: 20px; position: relative;}
+.join_required {display: inline-block; width: 7px; height: 6px; background: url(../images/common/icon_check_join.gif) no-repeat; vertical-align: middle; margin-left: 5px;}
+.condition {font-size: 11px; color: #848484; letter-spacing: -1px; margin-left: 10px;}
+.join-wrapper{padding-top: 50px; padding-left: 700px;}
+
+input[type=text], input[type=file], input[type=password] {width: 200px; height: 30px; border: 1px solid #dcdcdc; background-color: #fbfbfb; vertical-align: middle; text-align: center;}
+.hello {width: 130px; height: 42px; background-color: #5e5e5e; color: #fff; font-size: 16px; font-weight: 700; border: 0;}
+
+button[type=button]{width: 130px; height: 42px; font-size: 16px; font-weight: 700; color: #999; background-color: #e6e6e6; border: 1px solid #c9c9c9; margin-right: 30px;}

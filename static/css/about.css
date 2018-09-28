@@ -1,0 +1,26 @@
+h2 {color: #9591CE; text-align: center; margin-top: 5%;}
+h3 {line-height: 30px; margin: 70px 0;}
+
+.title {line-height: 30px; margin: 90px 0;}
+
+#about_img img {width: 90%; height: 500px; margin-top: 50px;}
+#top-line{width: 95%; margin: 10px auto; border-bottom: 2px solid #e0e0e0;}
+
+#cnt_box {width: 90%; margin: 20px auto; border-top: 2px solid #9591CE; border-bottom: 2px solid #9591CE; font-size: 18px; line-height: 30px;}
+.cnt_box_text{margin: 50px 0;}
+
+#cnt_box_bottom {height: 500px; text-align: left; line-height: 30px;}
+#cnt_box_bottom img {float: left; width: 50%;}
+#cnt_box_bottom h3, #cnt_box_bottom p {float: left; width: 50%;}
+#cnt_box_bottom p {font-size: 16px;}
+#cnt_box_bottom1 {margin: 110px 0;}
+#cnt_about {text-align: center;}
+
+@media(min-width: 768px){
+	h2{margin-top: 100px;}
+	#cnt_box {width: 70%; padding: 20px 0; font-size: 14px;}
+	#cnt_box_bottom {width: 70%; height: 500px; padding: 20px 0; margin: 50px auto;}
+	#cnt_box_bottom p {font-size: 14px;}
+
+	#about_img img {width: 1200px; height: 500px; margin-top: 50px;}
+}
